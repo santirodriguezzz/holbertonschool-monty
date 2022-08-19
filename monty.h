@@ -1,5 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include <stddef.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,15 +38,16 @@ typedef struct instruction_s
 
 /*prototypes*/
 
-int _add(stack_t **stack, unsigned int __attribute__((unused))line_number);
+/*int _add(stack_t **stack, unsigned int __attribute__((unused))line_number);
 size_t _pall(stack_t **stack, unsigned int __atribute__((unused))line_number);
 size_t print_list(const list_t *h);
 void _push(stack_t **stack, unsigned int line_number);
-
+*/
 int (*get_op_func(char *s))(int, int);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
-char *_strdup(char *str);
+/*char *_strdup(char *str);*/
 char **generate_arguments(char *s, char *delimeters);
-void free_listint(dlistint_t *head);
+/*void free_listint(dlistint_t *head);*/
+char *read_all_file(const char *path);
 #endif
